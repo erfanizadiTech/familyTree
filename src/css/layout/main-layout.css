@@ -1,0 +1,142 @@
+/* public/assets/css/layout/main-layout.css */
+
+body {
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+#app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    z-index: 1000; /* Ensure header is on top */
+    position: sticky;
+    top: 0;
+    width: 100%;
+}
+
+main {
+    padding-top: var(--spacing-md);
+    padding-bottom: var(--spacing-md);
+    flex-grow: 1; /* Allow main to take available space */
+}
+
+/* Adjustments for Bootstrap container-fluid */
+.container-fluid {
+    /* Calculate height based on header/footer. Assuming header ~60px, footer ~60px, total 120px */
+    height: calc(100vh - 120px);
+    display: flex; /* Use flexbox for inner row alignment */
+    flex-direction: column; /* Stack columns vertically on smaller screens */
+}
+
+.container-fluid > .row {
+    flex-grow: 1; /* Allow row to take available height */
+}
+
+/* The main content column is now col-12, taking full width */
+.col-12 {
+    height: 100%; /* Make column take full height of its parent row */
+    position: relative; /* For absolute positioning of zoom controls */
+}
+
+/* Ensure tree container has height */
+#family-tree-container {
+    flex-grow: 1; /* Allow container to take available space within its column */
+    min-height: 400px; /* Minimum height even if content is small */
+    position: relative; /* For zoom controls positioning */
+}
+
+/* Zoom controls styling */
+.zoom-controls {
+    z-index: 500; /* Ensure buttons are above SVG */
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: flex-end; /* Align to the right */
+}
+
+.zoom-controls .btn {
+    width: 45px; /* Fixed width for circular or square buttons */
+    height: 45px; /* Fixed height */
+    padding: 0;
+    font-size: 1.8rem; /* Larger icons */
+    line-height: 1; /* Center text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--border-radius-medium); /* Rounded corners for buttons */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    border: none;
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.zoom-controls .btn:hover {
+    background-color: darken(var(--color-primary), 10%); /* Darken on hover */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+#zoom-reset-btn {
+    width: auto; /* Auto width for text button */
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--border-radius-medium);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+#zoom-reset-btn:hover {
+    background-color: darken(var(--color-primary), 10%);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 767.98px) { /* Small devices (tablet/mobile) */
+    .container-fluid {
+        height: auto; /* Allow height to auto-adjust for scrolling */
+        padding-left: var(--spacing-sm);
+        padding-right: var(--spacing-sm);
+    }
+
+    .col-12 {
+        height: auto; /* Allow height to auto-adjust */
+    }
+
+    #family-tree-container {
+        min-height: 50vh; /* Ensure tree area has a minimum height on smaller screens */
+    }
+
+    .zoom-controls {
+        position: static !important; /* Remove absolute positioning on small screens */
+        flex-direction: row; /* Buttons side-by-side */
+        justify-content: center;
+        gap: var(--spacing-md); /* Space between buttons */
+        padding-top: var(--spacing-md);
+        padding-bottom: var(--spacing-md);
+        width: 100%; /* Take full width */
+    }
+
+    .zoom-controls .btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
+    }
+
+    #zoom-reset-btn {
+        position: static !important; /* Remove absolute positioning */
+        margin-top: var(--spacing-md); /* Add space below zoom controls */
+        width: 100%; /* Full width button */
+    }
+}
+
+@media (max-width: 575.98px) { /* Extra small devices (smaller phones) */
+    .zoom-controls .btn {
+        width: 35px;
+        height: 35px;
+        font-size: 1.2rem;
+    }
+}

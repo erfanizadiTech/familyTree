@@ -1,0 +1,94 @@
+{
+    "Enum": {
+        "MarriageStatus": {
+            "Married": "متاهل",
+            "Divorced": "مجرد"
+        },
+        "Degree": {
+            "Diploma": "دیپلم",
+            "Associate": "کاردانی",
+            "Bachelor": "کارشناسی",
+            "Master": "کارشناسی ارشد",
+            "Doctorate": "دکترا"
+        },
+        "Gender": {
+            "Male": "مرد",
+            "Female": "زن"
+        },
+        "ResidenceType": {
+            "Owned": "مالک",
+            "Rented": "اجاره‌ای",
+            "WithParents": "با والدین",
+            "Other": "سایر"
+        },
+        "RelationType": {
+            "Parent": "والدین",
+            "Child": "فرزند",
+            "Sibling": "خواهر یا برادر",
+            "Spouse": "همسر",
+            "Other": "سایر"
+        }
+    },
+    "Person": [
+        {
+            "PersonId": "شناسه شخص",
+            "FirstName": "نام",
+            "LastName": "نام خانوادگی",
+            "Gender": "جنسیت",
+            "BirthDate": "تاریخ تولد",
+            "DeathDate": "تاریخ وفات ",
+            "FatherId": "شناسه پدر",
+            "MotherId": "شناسه مادر",
+            "Tel": "شماره تماس",
+            "eMail": "پست الکترونیکی",
+            "SiblingOrder": "ترتیب تولد در بین خواهران و برادران",
+            "Notes": "یادداشت‌های اضافی برای شخص",
+            "Marriage": [
+                {
+                    "SpouseId": "شناسه همسر",
+                    "MarriageDate": "تاریخ ازدواج",
+                    "Status": "وضعیت ازدواج (طلاق یا در حال ازدواج)",
+                    "DivorceDate": "تاریخ طلاق",
+                    "Notes": "یادداشت‌های اضافی برای ازدواج"
+                }
+            ],
+            "Education": [
+                {
+                    "InstitutionName": "نام مؤسسه آموزشی",
+                    "FieldOfStudy": "رشته تحصیلی",
+                    "Degree": "مدرک تحصیلی",
+                    "StartDate": "تاریخ شروع",
+                    "EndDate": "تاریخ پایان",
+                    "Notes": "یادداشت‌های اضافی برای تحصیل"
+                }
+            ],
+            "Employment": [
+                {
+                    "Organization": "نام سازمان یا شرکت",
+                    "Position": "عنوان شغلی",
+                    "StartDate": "تاریخ شروع اشتغال",
+                    "EndDate": "تاریخ پایان اشتغال",
+                    "IsCurrent": "آیا در حال حاضر مشغول به کار است؟",
+                    "Notes": "یادداشت‌های اضافی برای شغل"
+                }
+            ],
+            "Residence": [
+                {
+                    "Address": "آدرس محل زندگی",
+                    "Type": "نوع محل سکونت",
+                    "StartDate": "تاریخ شروع سکونت",
+                    "EndDate": "تاریخ پایان سکونت ",
+                    "Notes": " یادداشت‌های اضافی برای محل زندگی"
+                }
+            ]
+        }
+    ],
+    "PersonRelationship": [
+        {
+            "SourcePersonId": "شناسه شخص مبدا",
+            "TargetPersonId": "شناسه شخص مقصد",
+            "RelationType": "نوع رابطه خانوادگی",
+            "Notes": "توضیحات یا اطلاعات اضافی درباره رابطه"
+        }
+    ]
+}

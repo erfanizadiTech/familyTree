@@ -1,0 +1,26 @@
+/* src/css/base/typography.css */
+
+body {
+    font-family: var(--font-family-primary);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+    direction: rtl; /* Explicitly set RTL for all text */
+    text-align: right; /* Default text alignment for RTL */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700; /* Bold for headings */
+    margin-top: 0;
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-text-dark);
+}
+
+p {
+    margin-bottom: var(--spacing-md);
+}
+
+/* Ensure text direction for Bootstrap components */
+.form-control, .btn, .breadcrumb, .list-group-item {
+    direction: rtl;
+    text-align: right;
+}

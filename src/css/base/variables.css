@@ -1,0 +1,37 @@
+/* src/css/base/variables.css */
+:root {
+    /* Colors */
+    --color-primary: #4A90E2;        /* Blue for accents, buttons */
+    --color-secondary: #5C677D;      /* Dark grey for secondary text */
+    --color-text-dark: #333333;      /* Main text color */
+    --color-text-light: #FFFFFF;     /* Text on dark backgrounds */
+    --color-background-light: #F8F9FA; /* Light background for the page */
+    --color-surface-light: #FFFFFF;  /* White for cards, panels */
+    --color-border-light: #E0E0E0;   /* Light grey for borders */
+    --color-shadow: rgba(0, 0, 0, 0.1); /* Soft shadow */
+    --color-danger: #DC3545;         /* For death indicators */
+    --color-warning: #FFC107;        /* For divorce indicators */
+
+    /* Typography */
+    --font-family-primary: 'Vazirmatn', sans-serif; /* Example Farsi font */
+    --font-size-base: 1rem;
+    --line-height-base: 1.6;
+
+    /* Spacing */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+
+    /* Border Radius */
+    --border-radius-small: 0.25rem;
+    --border-radius-medium: 0.5rem;
+    --border-radius-large: 1rem;
+    --border-radius-circle: 50%;
+
+    /* Transitions */
+    --transition-speed-fast: 0.2s;
+    --transition-speed-medium: 0.3s;
+    --transition-easing: ease-in-out;
+}

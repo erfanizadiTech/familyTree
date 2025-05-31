@@ -1,0 +1,109 @@
+/* public/assets/css/components/tree-node.css */
+
+/* Styles for the SVG Nodes (using foreignObject for HTML content) */
+
+.node--person foreignObject {
+    overflow: visible; /* Allows content to extend beyond bounds if needed */
+}
+
+.person-node-card {
+    background-color: var(--color-surface-light);
+    border-radius: var(--border-radius-medium);
+    box-shadow: 0 6px 12px var(--color-shadow); /* Subtle raised effect */
+    padding: var(--spacing-sm);
+    text-align: center;
+    width: 100%; /* Fill foreignObject width */
+    height: 100%; /* Fill foreignObject height */
+    box-sizing: border-box; /* Include padding/border in element's total width and height */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform var(--transition-speed-medium) var(--transition-easing);
+    border: 1px solid var(--color-border-light); /* Subtle border */
+}
+
+.person-node-card:hover {
+    transform: scale(1.05); /* Slight zoom on hover for interactivity */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2); /* More pronounced shadow on hover */
+}
+
+.person-node-photo-wrapper {
+    width: 80px; /* Larger photo for nodes in the tree */
+    height: 80px;
+    border-radius: var(--border-radius-small); /* Square with rounded corners */
+    overflow: hidden;
+    border: 3px solid var(--color-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-bottom: var(--spacing-xs);
+    flex-shrink: 0; /* Prevent image from shrinking if name is long */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15); /* Shadow for the photo itself */
+}
+
+.person-node-photo-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Death ribbon for tree node cards */
+.person-node-card .death-ribbon {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    font-size: 1.2rem; /* Slightly larger ribbon */
+    line-height: 1;
+    background-color: black;
+    color: white;
+    padding: 0.1em 0.3em;
+    border-radius: var(--border-radius-small);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+    border: 1px solid white;
+}
+
+.person-node-name {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--color-text-dark);
+    line-height: 1.2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; /* Keep name on a single line */
+    max-width: 100%; /* Constrain to card width */
+    padding: 0 var(--spacing-xs); /* Small horizontal padding */
+}
+
+/* --- Styles for Marriage Nodes --- */
+.node--marriage circle {
+    /* Styles applied directly in JS for now */
+}
+.node--marriage text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    pointer-events: none; /* Allow click through text to the circle */
+}
+
+/* --- Link Styles --- */
+.link {
+    fill: none;
+    stroke: var(--color-border-light);
+    stroke-width: 1.5px;
+    opacity: 0.7;
+}
+
+.spouse-link {
+    stroke: var(--color-primary);
+    stroke-width: 2px;
+    stroke-dasharray: 5,5; /* Dashed line */
+}
+
+.marriage-connector {
+    stroke: var(--color-primary);
+    stroke-width: 1.5px;
+}

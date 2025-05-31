@@ -1,0 +1,43 @@
+/* Import modular CSS files */
+@import url("../../../src/css/base/variables.css");
+@import url("../../../src/css/base/typography.css");
+@import url("../../../src/css/layout/main-layout.css");
+/* @import url("../../../src/css/components/person-card.css"); /* REMOVED: Sidebar card styles */
+@import url("../../../src/css/components/breadcrumb.css");
+@import url("../../../src/css/components/tree-node.css"); /* NEW: Styles for nodes in the tree */
+@import url("../../../src/css/components/popup.css"); /* NEW: Styles for the person details popup */
+
+
+/* Global styles */
+body {
+    font-family: var(--font-family-primary);
+    background-color: var(--color-background-light);
+    color: var(--color-text-dark);
+}
+
+/* Ensure app takes full height */
+#app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Adjust Bootstrap RTL for specific elements if necessary */
+.breadcrumb-item + .breadcrumb-item::before {
+    float: right; /* Ensure separator floats correctly for RTL */
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+/* Tree container specific styles */
+#family-tree-container {
+    background-color: var(--color-surface-light);
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--border-radius-medium);
+    overflow: hidden; /* Important for SVG pan/zoom */
+}
+
+#family-tree-svg {
+    /* SVG will control its own content, but we might need basic sizing */
+    display: block; /* Remove extra space below SVG */
+}
