@@ -2,7 +2,7 @@
     "Enum": {
         "MarriageStatus": {
             "Married": "متاهل",
-            "Divorced": "مجرد"
+            "Divorced": "مطلقه"
         },
         "Degree": {
             "Diploma": "دیپلم",
@@ -31,64 +31,457 @@
     },
     "Person": [
         {
-            "PersonId": "شناسه شخص",
-            "FirstName": "نام",
-            "LastName": "نام خانوادگی",
-            "Gender": "جنسیت",
-            "BirthDate": "تاریخ تولد",
-            "DeathDate": "تاریخ وفات ",
-            "FatherId": "شناسه پدر",
-            "MotherId": "شناسه مادر",
-            "Tel": "شماره تماس",
-            "eMail": "پست الکترونیکی",
-            "SiblingOrder": "ترتیب تولد در بین خواهران و برادران",
-            "Notes": "یادداشت‌های اضافی برای شخص",
+            "PersonId": "P001",
+            "FirstName": "سید علی",
+            "LastName": "حسینی",
+            "Gender": "Male",
+            "BirthDate": "1320/01/01",
+            "DeathDate": "1398/05/15",
+            "FatherId": null,
+            "MotherId": null,
+            "Tel": "09121234567",
+            "eMail": "ali.h@example.com",
+            "SiblingOrder": 1,
+            "Notes": "بنیانگذار این شاخه از درخت خانواده. علاقه مند به تاریخ.",
             "Marriage": [
                 {
-                    "SpouseId": "شناسه همسر",
-                    "MarriageDate": "تاریخ ازدواج",
-                    "Status": "وضعیت ازدواج (طلاق یا در حال ازدواج)",
-                    "DivorceDate": "تاریخ طلاق",
-                    "Notes": "یادداشت‌های اضافی برای ازدواج"
+                    "SpouseId": "P002",
+                    "MarriageDate": "1344/11/21",
+                    "Status": "Married",
+                    "DivorceDate": null,
+                    "Notes": "ازدواج اول و تنها."
                 }
             ],
             "Education": [
                 {
-                    "InstitutionName": "نام مؤسسه آموزشی",
-                    "FieldOfStudy": "رشته تحصیلی",
-                    "Degree": "مدرک تحصیلی",
-                    "StartDate": "تاریخ شروع",
-                    "EndDate": "تاریخ پایان",
-                    "Notes": "یادداشت‌های اضافی برای تحصیل"
+                    "InstitutionName": "دانشگاه تهران",
+                    "FieldOfStudy": "مهندسی برق",
+                    "Degree": "Bachelor",
+                    "StartDate": "1338/06/09",
+                    "EndDate": "1342/04/09",
+                    "Notes": "فارغ التحصیل با رتبه ممتاز."
                 }
             ],
             "Employment": [
                 {
-                    "Organization": "نام سازمان یا شرکت",
-                    "Position": "عنوان شغلی",
-                    "StartDate": "تاریخ شروع اشتغال",
-                    "EndDate": "تاریخ پایان اشتغال",
-                    "IsCurrent": "آیا در حال حاضر مشغول به کار است؟",
-                    "Notes": "یادداشت‌های اضافی برای شغل"
+                    "Organization": "دانشگاه صنعتی شریف",
+                    "Position": "استاد تمام",
+                    "StartDate": "1347/07/09",
+                    "EndDate": "1384/06/08",
+                    "IsCurrent": false,
+                    "Notes": "بازنشسته."
                 }
             ],
             "Residence": [
                 {
-                    "Address": "آدرس محل زندگی",
-                    "Type": "نوع محل سکونت",
-                    "StartDate": "تاریخ شروع سکونت",
-                    "EndDate": "تاریخ پایان سکونت ",
-                    "Notes": " یادداشت‌های اضافی برای محل زندگی"
+                    "Address": "تهران، خیابان ولیعصر، پلاک ۱۰۰",
+                    "Type": "Owned",
+                    "StartDate": "1344/12/10",
+                    "EndDate": null,
+                    "Notes": "محل زندگی اصلی خانواده."
+                }
+            ]
+        },
+        {
+            "PersonId": "P002",
+            "FirstName": "فاطمه",
+            "LastName": "علوی",
+            "Gender": "Female",
+            "BirthDate": "1325/02/20",
+            "DeathDate": null,
+            "FatherId": null,
+            "MotherId": null,
+            "Tel": "09127654321",
+            "eMail": "fatemeh.a@example.com",
+            "SiblingOrder": 1,
+            "Notes": "همسر سید علی حسینی. علاقه مند به باغبانی.",
+            "Marriage": [
+                {
+                    "SpouseId": "P001",
+                    "MarriageDate": "1344/11/21",
+                    "Status": "Married",
+                    "DivorceDate": null,
+                    "Notes": "ازدواج اول و تنها."
+                }
+            ],
+            "Education": [
+                {
+                    "InstitutionName": "دانشگاه تربیت معلم",
+                    "FieldOfStudy": "علوم تربیتی",
+                    "Degree": "Bachelor",
+                    "StartDate": "1343/06/09",
+                    "EndDate": "1347/04/09",
+                    "Notes": "معلم بازنشسته."
+                }
+            ],
+            "Employment": [
+                {
+                    "Organization": "آموزش و پرورش",
+                    "Position": "معلم",
+                    "StartDate": "1347/06/09",
+                    "EndDate": "1379/05/31",
+                    "IsCurrent": false,
+                    "Notes": "بازنشسته."
+                }
+            ],
+            "Residence": [
+                {
+                    "Address": "تهران، خیابان ولیعصر، پلاک ۱۰۰",
+                    "Type": "Owned",
+                    "StartDate": "1344/12/10",
+                    "EndDate": null,
+                    "Notes": "محل زندگی اصلی خانواده."
+                }
+            ]
+        },
+        {
+            "PersonId": "P003",
+            "FirstName": "محمد",
+            "LastName": "حسینی",
+            "Gender": "Male",
+            "BirthDate": "1350/07/25",
+            "DeathDate": null,
+            "FatherId": "P001",
+            "MotherId": "P002",
+            "Tel": "09171112233",
+            "eMail": "mohammad.h@example.com",
+            "SiblingOrder": 1,
+            "Notes": "پسر بزرگ خانواده.",
+            "Marriage": [
+                {
+                    "SpouseId": "P005",
+                    "MarriageDate": "1375/01/13",
+                    "Status": "Married",
+                    "DivorceDate": null,
+                    "Notes": "ازدواج با سارا کریمی."
+                }
+            ],
+            "Education": [
+                {
+                    "InstitutionName": "دانشگاه علوم پزشکی شیراز",
+                    "FieldOfStudy": "پزشکی",
+                    "Degree": "Doctorate",
+                    "StartDate": "1368/06/09",
+                    "EndDate": "1375/04/09",
+                    "Notes": "جراح عمومی."
+                }
+            ],
+            "Employment": [
+                {
+                    "Organization": "بیمارستان نمازی شیراز",
+                    "Position": "جراح",
+                    "StartDate": "1377/04/10",
+                    "EndDate": null,
+                    "IsCurrent": true,
+                    "Notes": "در حال حاضر مشغول به کار."
+                }
+            ],
+            "Residence": [
+                {
+                    "Address": "شیراز، بلوار ارم، کوچه باغ",
+                    "Type": "Owned",
+                    "StartDate": "1375/10/11",
+                    "EndDate": null,
+                    "Notes": "محل زندگی در شیراز."
+                }
+            ]
+        },
+        {
+            "PersonId": "P004",
+            "FirstName": "زهرا",
+            "LastName": "حسینی",
+            "Gender": "Female",
+            "BirthDate": "1351/11/10",
+            "DeathDate": null,
+            "FatherId": "P001",
+            "MotherId": "P002",
+            "Tel": "09134445566",
+            "eMail": "zahra.h@example.com",
+            "SiblingOrder": 2,
+            "Notes": "دختر خانواده. علاقه مند به هنر.",
+            "Marriage": [
+                {
+                    "SpouseId": "P008",
+                    "MarriageDate": "1377/05/24",
+                    "Status": "Married",
+                    "DivorceDate": null,
+                    "Notes": "ازدواج با رضا احمدی."
+                }
+            ],
+            "Education": [
+                {
+                    "InstitutionName": "دانشگاه اصفهان",
+                    "FieldOfStudy": "حقوق",
+                    "Degree": "Bachelor",
+                    "StartDate": "1370/06/09",
+                    "EndDate": "1374/04/09",
+                    "Notes": "وکیل پایه یک دادگستری."
+                }
+            ],
+            "Employment": [
+                {
+                    "Organization": "دفتر وکالت شخصی",
+                    "Position": "وکیل",
+                    "StartDate": "1375/12/10",
+                    "EndDate": null,
+                    "IsCurrent": true,
+                    "Notes": "دفتر مستقل."
+                }
+            ],
+            "Residence": [
+                {
+                    "Address": "اصفهان، میدان نقش جهان، خیابان سپه",
+                    "Type": "Rented",
+                    "StartDate": "1375/12/10",
+                    "EndDate": null,
+                    "Notes": "محل کار و زندگی در اصفهان."
+                }
+            ]
+        },
+        {
+            "PersonId": "P005",
+            "FirstName": "سارا",
+            "LastName": "کریمی",
+            "Gender": "Female",
+            "BirthDate": "1354/09/05",
+            "DeathDate": null,
+            "FatherId": null,
+            "MotherId": null,
+            "Tel": "09177778899",
+            "eMail": "sara.k@example.com",
+            "SiblingOrder": 1,
+            "Notes": "همسر محمد حسینی.",
+            "Marriage": [
+                {
+                    "SpouseId": "P003",
+                    "MarriageDate": "1375/01/13",
+                    "Status": "Married",
+                    "DivorceDate": null,
+                    "Notes": "ازدواج با محمد حسینی."
+                }
+            ],
+            "Education": [
+                {
+                    "InstitutionName": "دانشگاه علوم پزشکی تهران",
+                    "FieldOfStudy": "داروسازی",
+                    "Degree": "Doctorate",
+                    "StartDate": "1372/06/09",
+                    "EndDate": "1378/04/09",
+                    "Notes": "دکتر داروساز."
+                }
+            ],
+            "Employment": [
+                {
+                    "Organization": "داروخانه مرکزی شیراز",
+                    "Position": "مسئول فنی",
+                    "StartDate": "1378/10/10",
+                    "EndDate": null,
+                    "IsCurrent": true,
+                    "Notes": "در حال حاضر مشغول به کار."
+                }
+            ],
+            "Residence": [
+                {
+                    "Address": "شیراز، بلوار ارم، کوچه باغ",
+                    "Type": "Owned",
+                    "StartDate": "1375/10/11",
+                    "EndDate": null,
+                    "Notes": "محل زندگی در شیراز."
+                }
+            ]
+        },
+        {
+            "PersonId": "P006",
+            "FirstName": "امیر",
+            "LastName": "حسینی",
+            "Gender": "Male",
+            "BirthDate": "1380/06/12",
+            "DeathDate": null,
+            "FatherId": "P003",
+            "MotherId": "P005",
+            "Tel": "09351234567",
+            "eMail": "amir.h@example.com",
+            "SiblingOrder": 1,
+            "Notes": "فرزند محمد و سارا.",
+            "Marriage": [],
+            "Education": [
+                {
+                    "InstitutionName": "دانشگاه شیراز",
+                    "FieldOfStudy": "علوم کامپیوتر",
+                    "Degree": "Bachelor",
+                    "StartDate": "1398/06/09",
+                    "EndDate": null,
+                    "Notes": "دانشجوی کارشناسی."
+                }
+            ],
+            "Employment": [
+                {
+                    "Organization": "فریلنسر",
+                    "Position": "توسعه دهنده وب",
+                    "StartDate": "1400/10/11",
+                    "EndDate": null,
+                    "IsCurrent": true,
+                    "Notes": "کار به صورت آزاد."
+                }
+            ],
+            "Residence": [
+                {
+                    "Address": "شیراز، بلوار ارم، کوچه باغ",
+                    "Type": "Owned",
+                    "StartDate": "1380/06/12",
+                    "EndDate": null,
+                    "Notes": "همراه والدین."
+                }
+            ]
+        },
+        {
+            "PersonId": "P007",
+            "FirstName": "مریم",
+            "LastName": "حسینی",
+            "Gender": "Female",
+            "BirthDate": "1381/11/01",
+            "DeathDate": null,
+            "FatherId": "P003",
+            "MotherId": "P005",
+            "Tel": "09359876543",
+            "eMail": "maryam.h@example.com",
+            "SiblingOrder": 2,
+            "Notes": "فرزند دوم محمد و سارا. علاقه مند به موسیقی.",
+            "Marriage": [],
+            "Education": [
+                {
+                    "InstitutionName": "هنرستان موسیقی",
+                    "FieldOfStudy": "نوازندگی پیانو",
+                    "Degree": "Diploma",
+                    "StartDate": "1396/06/09",
+                    "EndDate": "1400/04/09",
+                    "Notes": "فارغ التحصیل."
+                }
+            ],
+            "Employment": [],
+            "Residence": [
+                {
+                    "Address": "شیراز، بلوار ارم، کوچه باغ",
+                    "Type": "Owned",
+                    "StartDate": "1381/11/01",
+                    "EndDate": null,
+                    "Notes": "همراه والدین."
+                }
+            ]
+        },
+        {
+            "PersonId": "P008",
+            "FirstName": "رضا",
+            "LastName": "احمدی",
+            "Gender": "Male",
+            "BirthDate": "1349/04/14",
+            "DeathDate": null,
+            "FatherId": null,
+            "MotherId": null,
+            "Tel": "09123334455",
+            "eMail": "reza.a@example.com",
+            "SiblingOrder": 1,
+            "Notes": "همسر زهرا حسینی.",
+            "Marriage": [
+                {
+                    "SpouseId": "P004",
+                    "MarriageDate": "1377/05/24",
+                    "Status": "Married",
+                    "DivorceDate": null,
+                    "Notes": "ازدواج با زهرا حسینی."
+                }
+            ],
+            "Education": [
+                {
+                    "InstitutionName": "دانشگاه صنعتی اصفهان",
+                    "FieldOfStudy": "معماری",
+                    "Degree": "Master",
+                    "StartDate": "1367/06/09",
+                    "EndDate": "1373/04/09",
+                    "Notes": "معمار."
+                }
+            ],
+            "Employment": [
+                {
+                    "Organization": "شرکت مهندسین مشاور",
+                    "Position": "مدیر پروژه",
+                    "StartDate": "1373/10/10",
+                    "EndDate": null,
+                    "IsCurrent": true,
+                    "Notes": "در حال حاضر مشغول به کار."
+                }
+            ],
+            "Residence": [
+                {
+                    "Address": "اصفهان، میدان نقش جهان، خیابان سپه",
+                    "Type": "Owned",
+                    "StartDate": "1377/05/24",
+                    "EndDate": null,
+                    "Notes": "محل زندگی در اصفهان."
                 }
             ]
         }
     ],
     "PersonRelationship": [
         {
-            "SourcePersonId": "شناسه شخص مبدا",
-            "TargetPersonId": "شناسه شخص مقصد",
-            "RelationType": "نوع رابطه خانوادگی",
-            "Notes": "توضیحات یا اطلاعات اضافی درباره رابطه"
+            "SourcePersonId": "P001",
+            "TargetPersonId": "P003",
+            "RelationType": "Parent",
+            "Notes": "پدر محمد"
+        },
+        {
+            "SourcePersonId": "P002",
+            "TargetPersonId": "P003",
+            "RelationType": "Parent",
+            "Notes": "مادر محمد"
+        },
+        {
+            "SourcePersonId": "P001",
+            "TargetPersonId": "P004",
+            "RelationType": "Parent",
+            "Notes": "پدر زهرا"
+        },
+        {
+            "SourcePersonId": "P002",
+            "TargetPersonId": "P004",
+            "RelationType": "Parent",
+            "Notes": "مادر زهرا"
+        },
+        {
+            "SourcePersonId": "P003",
+            "TargetPersonId": "P006",
+            "RelationType": "Parent",
+            "Notes": "پدر امیر"
+        },
+        {
+            "SourcePersonId": "P005",
+            "TargetPersonId": "P006",
+            "RelationType": "Parent",
+            "Notes": "مادر امیر"
+        },
+        {
+            "SourcePersonId": "P003",
+            "TargetPersonId": "P007",
+            "RelationType": "Parent",
+            "Notes": "پدر مریم"
+        },
+        {
+            "SourcePersonId": "P005",
+            "TargetPersonId": "P007",
+            "RelationType": "Parent",
+            "Notes": "مادر مریم"
+        },
+        {
+            "SourcePersonId": "P004",
+            "TargetPersonId": "P008",
+            "RelationType": "Spouse",
+            "Notes": "همسر زهرا"
+        },
+        {
+            "SourcePersonId": "P008",
+            "TargetPersonId": "P004",
+            "RelationType": "Spouse",
+            "Notes": "همسر رضا"
         }
     ]
 }

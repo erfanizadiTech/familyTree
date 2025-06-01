@@ -45,12 +45,11 @@ export function updateBreadcrumb(currentPerson) {
     olElement.appendChild(homeItem);
 
     // Add the current person's name as an active breadcrumb item if provided
-    if (currentPerson && currentPerson.FirstName && currentPerson.LastName) {
-        const fullName = `${currentPerson.FirstName} ${currentPerson.LastName}`.trim();
+    if (currentPerson && currentPerson.fullName) { // Use fullName
         const currentItem = document.createElement('li');
         currentItem.className = 'breadcrumb-item active';
         currentItem.setAttribute('aria-current', 'page');
-        currentItem.textContent = fullName;
+        currentItem.textContent = currentPerson.fullName;
         olElement.appendChild(currentItem);
     }
 }

@@ -14,6 +14,17 @@ let enums = {}; // Global object to hold enum data
 export async function initializeApp() {
     console.log('Initializing Family Tree Application...');
 
+    // Initialize Moment-Jalaali locale settings
+    // This must run AFTER Moment.js and Moment-Jalaali are loaded (via CDN in index.html)
+    if (typeof moment !== 'undefined' && typeof moment.j !== 'undefined') {
+        // 'use:"en"' allows parsing Gregorian dates from JSON, then converting to Persian
+        moment.loadPersian({dialect: 'persian-modern', use:"en"});
+        moment.setLocale('fa'); // Set global locale to Farsi
+        console.log("Moment-Jalaali locale initialized.");
+    } else {
+        console.warn("Moment.js or Moment-Jalaali not fully loaded. Date formatting might be incorrect.");
+    }
+
     // 1. Load family data (entire JSON structure)
     try {
         const fullJsonData = await fetchData('assets/data/family.json');

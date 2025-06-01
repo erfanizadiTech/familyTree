@@ -131,20 +131,18 @@ export function renderTree(rawFamilyData, onNodeClickCallback, peopleMap) {
         .attr("y", -personCardHeight / 2) // Center vertically
         .html(d => {
             const person = d.data;
-            const fullName = `${person.FirstName || ''} ${person.LastName || ''}`.trim();
+            const fullName = person.fullName; // Use the fullName property created in data-parser.js
             const isDeceased = person.DeathDate && person.DeathDate !== "";
             // Use a simple black ribbon emoji for now, styling in CSS
             const deathRibbon = isDeceased ? '<span class="death-ribbon">🖤</span>' : '';
-            // Use placeholder image if photo is missing or null
-            // Note: The provided JSON schema doesn't have a 'photo' field directly on Person.
-            // Assuming we'll add it or use a default. For now, using a generic placeholder.
-            const imgSrc = person.photo && person.photo !== "" ? person.photo : 'https://placehold.co/150x150/e0e0e0/333333?text=N/A';
+            // Use default blank.jpg if photo is missing or null
+            const imgSrc = person.photo && person.photo !== "" ? person.photo : 'assets/img/blank.jpg';
 
 
             return `
                 <div class="person-node-card">
                     <div class="person-node-photo-wrapper">
-                        <img src="${imgSrc}" onerror="this.src='https://placehold.co/150x150/e0e0e0/333333?text=N/A';" alt="${fullName}">
+                        <img src="${imgSrc}" onerror="this.src='assets/img/blank.jpg';" alt="${fullName}">
                         ${deathRibbon}
                     </div>
                     <div class="person-node-name">${fullName}</div>
